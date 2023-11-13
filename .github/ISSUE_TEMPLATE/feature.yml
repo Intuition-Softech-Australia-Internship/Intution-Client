@@ -1,0 +1,17 @@
+name: 'Feature'
+description: '새로운 기능에 대한 issue'
+labels: 'Feature'
+body:
+  - type: textarea
+    attributes:
+      label: Describe
+      description: 새로운 기능에 대한 설명
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: ✅ Tasks
+      description: 해야 하는 일에 대한 Tasks를 작성해 주세요.
+      placeholder: ◻︎ User Entity 작성
+    validations:
+      required: true
