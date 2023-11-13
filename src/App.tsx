@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { Layout } from "./components/layout/Layout";
 import { Login } from "./pages/auth/login/Login";
 function App() {
-  
   const queryClient = new QueryClient();
 
   return (
