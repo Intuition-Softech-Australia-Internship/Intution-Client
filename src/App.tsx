@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Layout } from "./components/layout/Layout";
-
+import { Login } from "./pages/auth/login/Login";
 function App() {
   const queryClient = new QueryClient();
 
@@ -13,7 +13,7 @@ function App() {
         <BrowserRouter>
           <Layout>
             <Routes>
-
+              <Route path="/" element={<Login />} />
             </Routes>
           </Layout>
         </BrowserRouter>
@@ -23,5 +23,3 @@ function App() {
 }
 
 export default App;
-
-

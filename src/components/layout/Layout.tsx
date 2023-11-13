@@ -10,7 +10,7 @@ export const Layout = ({ children, bgColor }: Props) => {
         backgroundColor: bgColor,
       }}
     >
-      <div style={{ width: "75%", marginTop: "75px" }}>{children}</div>
+      <div style={{ width: "65%", marginTop: "8%" }}>{children}</div>
     </div>
   );
 };
