@@ -4,6 +4,7 @@ import { RecoilRoot } from "recoil";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Layout } from "./components/layout/Layout";
 import { Login } from "./pages/auth/login/Login";
+import { SignUp } from "./pages/auth/signUp/SignUp";
 function App() {
   const queryClient = new QueryClient();
 
@@ -14,6 +15,7 @@ function App() {
           <Layout>
             <Routes>
               <Route path="/" element={<Login />} />
+              <Route path="/signup" element={<SignUp />} />
             </Routes>
           </Layout>
         </BrowserRouter>
