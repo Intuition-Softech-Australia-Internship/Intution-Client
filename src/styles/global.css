@@ -1,5 +1,4 @@
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
-
 :root {
   --vh: 100%;
 }
@@ -18,7 +17,12 @@ main {
 }
 
 body {
-  background-color: #E4EFFF;
+  background-color: #e4efff;
   color: black;
   width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #0066FF;
 }

@@ -24,7 +24,7 @@ const InputStyle = styled.input`
 `;
 
 const InputBox = styled.div`
-  padding-bottom: 25px;
+padding-top: 20px;
 `;
 
 const InputName = styled.label`

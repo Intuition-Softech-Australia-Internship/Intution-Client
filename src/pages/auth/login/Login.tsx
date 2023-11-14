@@ -4,6 +4,7 @@ import { useQuery, useMutation } from "react-query";
 import * as S from "./Login.style";
 import { Input } from "../../../components/shared/common/Input/Input";
 import { AuthBtn } from "../../../components/shared/common/AuthBtn/AuthBtn";
+import { LinkStyle } from "../../../components/shared/common/LinkStyle/LinkStyle";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ export const Login = () => {
         </S.InputBox>
         <S.SignCnt>
           <S.SignMent>Don’t have an account?</S.SignMent>
-          <S.SignBtn>Sign up</S.SignBtn>
+            <LinkStyle name="Sign Up" link="/signup" />
         </S.SignCnt>
       </S.LoginBox>
     </S.Login>

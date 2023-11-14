@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Colors } from "../../../constants/colors.constant";
 
-export const Login = styled.div`
+export const SignUp = styled.div`
   display: flex;
   height: 70vh;
   justify-content: space-between;
@@ -12,9 +12,9 @@ export const Login = styled.div`
   padding: 40px;
 `;
 
-export const ImageBox = styled.div`
-  display: flex;
-  justify-content: center;
+export const MentBox = styled.div`
+  text-align: center;
+  width: 50%;
 `;
 
 export const Line = styled.div`
@@ -23,11 +23,7 @@ export const Line = styled.div`
   border-radius: 10px;
 `;
 
-export const Img = styled.img`
-  width: 70%;
-`;
-
-export const LoginBox = styled.div`
+export const SignBox = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 15px;
@@ -42,27 +38,31 @@ export const LoginBox = styled.div`
 `;
 
 export const Title = styled.p`
-  display: flex;
   font-weight: 600;
   font-size: 25px;
+`;
+
+export const Describe = styled.p`
+  color: ${Colors.gray600};
+  padding-top: 30px;
+`;
+
+export const LoginBtn = styled.p`
+  position: relative;
+  top: 10px;
+  color: ${Colors.mainBlue};
+  font-size: 13px;
+width: 3.5vw;
+  margin: auto;
+`;
+
+export const LoginBox = styled.div`
+  padding-top: 30px;
 `;
 
 export const InputBox = styled.div`
   display: flex;
   flex-direction: column;
-  padding-top: 20px;
-`;
 
-export const SignCnt = styled.div`
-  display: flex;
-  float: left;
-  position: relative;
-  top: 60px;
-  left: 25%;
-  width: auto;
+  padding-top: 8px;
 `;
-export const SignMent = styled.span`
-  color: ${Colors.gray500};
-  font-size: 13px;
-`;
-
