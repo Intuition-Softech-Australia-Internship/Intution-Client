@@ -14,4 +14,7 @@ const BtnStyle = styled.button`
   font-size: 15px;
   border: none;
   border-radius: 40px;
+  &:hover{
+    cursor: pointer;
+  }
 `;

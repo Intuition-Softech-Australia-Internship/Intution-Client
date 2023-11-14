@@ -11,6 +11,8 @@ export const Input = (props: InputHTMLAttributes<HTMLInputElement>) => {
   );
 };
 
+
+
 const InputStyle = styled.input`
   width: 100%;
   height: 5vh;
@@ -20,7 +22,7 @@ const InputStyle = styled.input`
   &:focus {
     outline: none;
     border-bottom: 2px solid ${Colors.mainBlue};
-
+    transition: all 0.5s;
   }
 `;
 
@@ -36,5 +38,6 @@ const InputName = styled.label`
 
   ${InputStyle}:focus ~ & {
     color: ${Colors.mainBlue};
+    transition: all 1s;
   }
 `;
