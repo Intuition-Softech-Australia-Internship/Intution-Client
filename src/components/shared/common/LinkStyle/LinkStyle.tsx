@@ -26,7 +26,7 @@ export const SignBtn = styled.p`
     padding-top: 2px;
     border-bottom: solid 1px ${Colors.mainBlue};
     transform: scaleX(0);
-    transition: transform 250ms ease-in-out;
+    transition: transform 250ms ease-in-out
   }
   :hover:after {
     transform: scaleX(1);

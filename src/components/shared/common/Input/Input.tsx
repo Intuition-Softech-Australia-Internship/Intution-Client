@@ -5,7 +5,7 @@ import { Colors } from "../../../../constants/colors.constant";
 export const Input = (props: InputHTMLAttributes<HTMLInputElement>) => {
   return (
     <InputBox>
-    <InputStyle {...props} />
+      <InputStyle {...props} />
       <InputName>{props.name}</InputName>
     </InputBox>
   );
@@ -20,11 +20,12 @@ const InputStyle = styled.input`
   &:focus {
     outline: none;
     border-bottom: 2px solid ${Colors.mainBlue};
+
   }
 `;
 
 const InputBox = styled.div`
-padding-top: 20px;
+  padding-top: 20px;
 `;
 
 const InputName = styled.label`
@@ -32,7 +33,7 @@ const InputName = styled.label`
   font-size: 13px;
   position: relative;
   bottom: 60px;
-  
+
   ${InputStyle}:focus ~ & {
     color: ${Colors.mainBlue};
   }
