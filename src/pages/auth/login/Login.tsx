@@ -7,7 +7,7 @@ import { AuthBtn } from "../../../components/shared/common/AuthBtn/AuthBtn";
 import { LinkStyle } from "../../../components/shared/common/LinkStyle/LinkStyle";
 
 export const Login = () => {
-  const navigate = useNavigate();
+
   return (
     <S.Login>
       <S.ImageBox>
