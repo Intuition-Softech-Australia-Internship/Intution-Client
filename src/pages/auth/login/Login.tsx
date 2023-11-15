@@ -27,10 +27,9 @@ export const Login = () => {
       } else {
         navigate("/");
       }
-      alert("Success");
+      alert("Login successful!");
     },
     onError: () => {
-      alert("The accounts do not match.");
     },
   });
 

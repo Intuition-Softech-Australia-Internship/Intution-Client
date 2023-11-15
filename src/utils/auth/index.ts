@@ -11,7 +11,7 @@ export const accessTokenExpired = async () => {
     });
     Storage.setItem(ACCESS_KEY, data.accessToken);
   } catch {
-    alert("다시 로그인 해주세요");
+    alert("The accounts do not match.");
     window.location.href = "/";
     localStorage.clear();
   }

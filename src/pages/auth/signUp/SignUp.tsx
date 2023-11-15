@@ -11,12 +11,6 @@ import { newUser } from "../../../apis/auth";
 export const SignUp = () => {
   const navigate = useNavigate();
 
-  const [pwdData, setPwdData] = useState({
-    pwd: "",
-    pwdcheck: "",
-  }); // password check
-  const { pwd, pwdcheck } = pwdData;
-
   const [request, setRequest] = useState<NEW_AUTH>({
     username: "",
     email: "",
@@ -45,15 +39,11 @@ export const SignUp = () => {
   };
 
   const create = () => {
-    if (pwd !== pwdcheck) {
-      alert("The passwords do not match.");
-    } else {
-      mutate({
-        username: request.username,
-        email: request.email,
-        password: request.password,
-      });
-    }
+    mutate({
+      username: request.username,
+      email: request.email,
+      password: request.password,
+    });
   };
 
   return (
@@ -81,16 +71,13 @@ export const SignUp = () => {
             onChange={handleChange}
             name="password"
             type="password"
-            value={pwd}
             label="Password"
           />
           <Input
             name="reapeatPassword"
             label="Reapeat Password"
             type="password"
-            value={pwdcheck}
           />
-          {pwd !== pwdcheck ? <></> : <></>}
         </S.InputBox>
         <S.InputBox>
           <AuthBtn value={"Sign up"} onClick={create} />
