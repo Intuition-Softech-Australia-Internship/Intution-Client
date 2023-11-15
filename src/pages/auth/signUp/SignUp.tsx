@@ -2,7 +2,50 @@ import * as S from "./SignUp.style";
 import { Input } from "../../../components/shared/common/Input/Input";
 import { AuthBtn } from "../../../components/shared/common/AuthBtn/AuthBtn";
 import { LinkStyle } from "../../../components/shared/common/LinkStyle/LinkStyle";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { NEW_AUTH } from "../../../components/types/auth.type";
+import { useMutation } from "react-query";
+import { newUser } from "../../../apis/auth";
+
 export const SignUp = () => {
+  const navigate = useNavigate();
+
+  const [request, setRequest] = useState<NEW_AUTH>({
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  const { mutate } = useMutation(newUser, {
+    onSuccess: (data) => {
+      alert(
+        "Your registration has been successfully completed. Now, please log in to access our services.!"
+      );
+      navigate("/");
+    },
+    onError: () => {
+      alert(
+        "Please ensure that all required fields are filled in correctly and try again."
+      );
+    },
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setRequest({
+      ...request,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const create = () => {
+    mutate({
+      username: request.username,
+      email: request.email,
+      password: request.password,
+    });
+  };
+
   return (
     <S.SignUp>
       <S.MentBox>
@@ -21,29 +64,23 @@ export const SignUp = () => {
       <S.Line />
       <S.SignBox>
         <S.InputBox>
+          <Input onChange={handleChange} name="username" label="First name" />
+          <Input onChange={handleChange} name="username" label="Last name" />
+          <Input onChange={handleChange} name="email" label="Email Address" />
           <Input
-            // onChange={handleChange}
-            name="First Name"
+            onChange={handleChange}
+            name="password"
+            type="password"
+            label="Password"
           />
           <Input
-            // onChange={handleChange}
-            name="Last Name"
-          />
-          <Input
-            // onChange={handleChange}
-            name="Email Address"
-          />
-          <Input
-            // onChange={handleChange}
-            name="Password"
-          />
-          <Input
-            // onChange={handleChange}
-            name="Repeat Password"
+            name="reapeatPassword"
+            label="Reapeat Password"
+            type="password"
           />
         </S.InputBox>
         <S.InputBox>
-          <AuthBtn value={"Sign up"} />
+          <AuthBtn value={"Sign up"} onClick={create} />
         </S.InputBox>
       </S.SignBox>
     </S.SignUp>

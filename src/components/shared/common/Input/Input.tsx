@@ -2,11 +2,15 @@ import React, { InputHTMLAttributes } from "react";
 import styled from "styled-components";
 import { Colors } from "../../../../constants/colors.constant";
 
-export const Input = (props: InputHTMLAttributes<HTMLInputElement>) => {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  label: string;
+} // 기능적인 부분 해결 및 이름도 적어야댈대..
+
+export const Input = (props: InputProps) => {
   return (
     <InputBox>
       <InputStyle {...props} />
-      <InputName>{props.name}</InputName>
+      <InputName>{props.label}</InputName>
     </InputBox>
   );
 };
@@ -20,7 +24,7 @@ const InputStyle = styled.input`
   &:focus {
     outline: none;
     border-bottom: 2px solid ${Colors.mainBlue};
-
+    transition: all 0.5s;
   }
 `;
 
@@ -36,5 +40,6 @@ const InputName = styled.label`
 
   ${InputStyle}:focus ~ & {
     color: ${Colors.mainBlue};
+    transition: all 1s;
   }
 `;
