@@ -2,7 +2,7 @@ import axios from "axios";
 import { accessTokenExpired } from "../../utils/auth";
 
 const server = axios.create({
-  baseURL: "https://1cb1-60-242-118-130.ngrok-free.app/",
+  baseURL: "https://1cb1-60-242-118-130.ngrok-free.app",
   timeout: 10000,
 });
 

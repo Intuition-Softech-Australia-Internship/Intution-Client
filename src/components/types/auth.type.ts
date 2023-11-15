@@ -3,6 +3,12 @@ export type LOGIN_AUTH = {
   password: string;
 };
 
+export type NEW_AUTH = {
+    username: string;
+    email: string;
+    password: string;
+  };
+
 export type USER = {
   accessToken: string;
   refreshToken: string;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useQuery, useMutation } from "react-query";
+import { useMutation } from "react-query";
 import { loginUser } from "../../../apis/auth";
 import * as S from "./Login.style";
 import { Storage } from "../../../lib/storage";
@@ -23,13 +23,13 @@ export const Login = () => {
       Storage.setItem(REFRESH_KEY, data.refreshToken);
 
       if (!data?.login) {
-        navigate("/hello");
+        navigate("/home");
       } else {
-        navigate("/zz");
+        navigate("/");
       }
       alert("Success");
     },
-    onError: (data) => {
+    onError: () => {
       alert("The accounts do not match.");
     },
   });
@@ -58,8 +58,13 @@ export const Login = () => {
       <S.LoginBox>
         <S.Title>Hello!</S.Title>
         <S.InputBox>
-          <Input onChange={handleChange} name="email" />
-          <Input onChange={handleChange} name="password" type="password" />
+          <Input onChange={handleChange} name="email" label="Email Address" />
+          <Input
+            onChange={handleChange}
+            name="password"
+            type="password"
+            label="Password"
+          />
         </S.InputBox>
         <S.InputBox>
           <AuthBtn value={"Sign in"} onClick={login} />
