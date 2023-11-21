@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Colors } from "../../../constants/colors.constant";
 
-export const SignUp = styled.div`
+export const UpdatePassword = styled.div`
   display: flex;
   height: 70vh;
   justify-content: space-between;
@@ -13,7 +13,7 @@ export const SignUp = styled.div`
 `;
 
 export const MentBox = styled.div`
-  text-align: center;
+text-align: center;
   width: 50%;
 `;
 
@@ -23,7 +23,7 @@ export const Line = styled.div`
   border-radius: 10px;
 `;
 
-export const SignBox = styled.div`
+export const UpdateBox = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 15px;
@@ -42,10 +42,6 @@ export const Title = styled.p`
   font-size: 25px;
 `;
 
-export const Describe = styled.p`
-  color: ${Colors.gray600};
-  padding-top: 30px;
-`;
 
 export const LoginBtn = styled.p`
   position: relative;
@@ -59,10 +55,13 @@ export const LoginBtn = styled.p`
 export const LoginBox = styled.div`
   padding-top: 30px;
 `;
-
 export const InputBox = styled.div`
   display: flex;
   flex-direction: column;
+  padding-top: 20px;
+`;
 
-  padding-top: 8px;
+export const Describe = styled.p`
+  color: ${Colors.gray600};
+  padding-top: 30px;
 `;
