@@ -6,6 +6,8 @@ import { Layout } from "./components/layout/Layout";
 import { Login } from "./pages/auth/login/Login";
 import { SignUp } from "./pages/auth/signUp/SignUp";
 import { Home } from "./pages/home/Home";
+import { UpdatePassword } from "./pages/auth/password/UpdatePassword";
+
 function App() {
   const queryClient = new QueryClient();
 
@@ -18,6 +20,7 @@ function App() {
               <Route path="/" element={<Login />} />
               <Route path="/home" element={<Home />} />
               <Route path="/signup" element={<SignUp />} />
+              <Route path="/update" element={<UpdatePassword />} />
             </Routes>
           </Layout>
         </BrowserRouter>
