@@ -4,11 +4,14 @@ import { AuthBtn } from "../../../components/shared/common/AuthBtn/AuthBtn";
 import { LinkStyle } from "../../../components/shared/common/LinkStyle/LinkStyle";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { GOOGLE_AUTH_LINK } from "../../../constants/key/auth.key";
 import { NEW_AUTH } from "../../../components/types/auth.type";
-import { useMutation } from "react-query";
-import { newUser } from "../../../apis/auth";
+import { useMutation, useQuery } from "react-query";
+import { newUser, getGoogleAuthLink } from "../../../apis/auth";
 
 export const SignUp = () => {
+  const { data } = useQuery([GOOGLE_AUTH_LINK], getGoogleAuthLink);
+
   const navigate = useNavigate();
 
   const [request, setRequest] = useState<NEW_AUTH>({
@@ -54,6 +57,9 @@ export const SignUp = () => {
           Please enter your details to sign up <br />
           and be part of out great community.
         </S.Describe>
+        <S.Link onClick={() => window.location.replace(data)}>
+          Create a Google Account
+        </S.Link>
         <S.LoginBox>
           <S.Describe>Already have a account?</S.Describe>
           <S.LoginBtn>

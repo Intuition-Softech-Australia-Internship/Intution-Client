@@ -63,6 +63,11 @@ export const LoginBox = styled.div`
 export const InputBox = styled.div`
   display: flex;
   flex-direction: column;
-
   padding-top: 8px;
+`;
+
+export const Link = styled.span`
+  color: ${Colors.mainBlue};
+  font-size: 15px;
+  padding-top: 20px;
 `;

@@ -1,4 +1,4 @@
-import { LOGIN_AUTH, NEW_AUTH, USER } from "../../components/types/auth.type";
+import { LOGIN_AUTH, NEW_AUTH, RESET_REQUEST, USER } from "../../components/types/auth.type";
 import server from "../client";
 
 export const loginUser = async ({
@@ -26,3 +26,12 @@ export const newUser = async ({
     })
   ).data;
 };
+
+
+export const getGoogleAuthLink = async () => {
+  return (await server.get("/auth/google")).data;
+};
+
+export const getAccessTokenByGoogle = async (code: string): Promise<RESET_REQUEST> => {
+  return (await server.post(`/auth/google/callback?code=${code}`)).data;
+};    

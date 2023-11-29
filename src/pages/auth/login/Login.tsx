@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useMutation } from "react-query";
-import { loginUser } from "../../../apis/auth";
+import { Link, useNavigate } from "react-router-dom";
+import { useMutation, useQuery } from "react-query";
+import { loginUser, getGoogleAuthLink } from "../../../apis/auth";
 import * as S from "./Login.style";
 import { Storage } from "../../../lib/storage";
+import { GOOGLE_AUTH_LINK } from "../../../constants/key/auth.key";
 import { ACCESS_KEY, REFRESH_KEY } from "../../../constants/user/auth.constant";
 import { Input } from "../../../components/shared/common/Input/Input";
 import { AuthBtn } from "../../../components/shared/common/AuthBtn/AuthBtn";
@@ -11,7 +12,7 @@ import { LinkStyle } from "../../../components/shared/common/LinkStyle/LinkStyle
 import { LOGIN_AUTH } from "../../../components/types/auth.type";
 export const Login = () => {
   const navigate = useNavigate();
-
+  const { data } = useQuery([GOOGLE_AUTH_LINK], getGoogleAuthLink);
   const [request, setRequest] = useState<LOGIN_AUTH>({
     email: "",
     password: "",
@@ -29,8 +30,7 @@ export const Login = () => {
       }
       alert("Login successful!");
     },
-    onError: () => {
-    },
+    onError: () => {},
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -68,6 +68,9 @@ export const Login = () => {
         <S.InputBox>
           <AuthBtn value={"Sign in"} onClick={login} />
         </S.InputBox>
+        <S.Link onClick={() => window.location.replace(data)}>
+          Log in with your Google account.
+        </S.Link>
         <S.SignCnt>
           <S.SignMent>Don’t have an account?</S.SignMent>
           <LinkStyle name="Sign Up" link="/signup" />

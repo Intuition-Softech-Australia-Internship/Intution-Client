@@ -6,7 +6,7 @@ export const Login = styled.div`
   height: 70vh;
   justify-content: space-between;
   align-items: center;
-  border-radius: 23px;
+  border-radius: 26px;
   background-color: white;
   box-shadow: 0px 0px 36.3px 0px rgba(0, 0, 0, 0.1);
   padding: 40px;
@@ -63,5 +63,11 @@ export const SignCnt = styled.div`
 `;
 export const SignMent = styled.span`
   color: ${Colors.gray500};
+  font-size: 13px;
+`;
+
+export const Link = styled.span`
+  color: blue;
+  text-align: center;
   font-size: 13px;
 `;
